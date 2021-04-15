@@ -1,10 +1,10 @@
 package com.dicoding.myintentapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.btn_move_actvity_data -> {
                 val moveWithDataIntent = Intent(this@MainActivity, MoveWithDataActivity::class.java)
-                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME, "Dicoding Academy Boy")
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME, "DicodingAcademy Boy")
                 moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_AGE, 5)
                 startActivity(moveWithDataIntent)
             }
