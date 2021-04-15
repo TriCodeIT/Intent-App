@@ -1,5 +1,6 @@
 package com.dicoding.myintentapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -13,13 +14,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnMoveActivity: Button = findViewById(R.id.btn_move_avtivity)
         btnMoveActivity.setOnClickListener(this)
+
+        val btnMoveWithDataActivity: Button = findViewById(R.id.btn_move_actvity_data)
+        btnMoveWithDataActivity.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_move_avtivity -> {
-
+                val moveIntent = Intent(this@MainActivity, MoveActivity::class.java)
+                startActivity(moveIntent)
             }
+
+            R.id.btn_move_actvity_data -> {
+                val moveWithDataIntent = Intent(this@MainActivity, MoveWithDataActivity::class.java)
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME, "Dicoding Academy Boy")
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_AGE, 5)
+                startActivity(moveWithDataIntent)
+            }
+
         }
     }
 
